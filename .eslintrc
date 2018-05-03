@@ -1,0 +1,63 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:lodash/canonical",
+  ],
+
+  "env": {
+    "node": true,
+    "es6": true,
+  },
+
+  "plugins": [
+    "lodash"
+  ],
+
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+
+  "rules": {
+    "callback-return":              ["error", ["done", "proceed", "next", "onwards", "callback", "cb"]],
+    "camelcase":                    ["warn", {"properties":"always"}],
+    "comma-style":                  ["warn", "last"],
+    "curly":                        ["error", "multi-or-nest", "consistent"],
+    "eqeqeq":                       ["error", "always"],
+    "eol-last":                     ["warn"],
+    "handle-callback-err":          ["error"],
+    "indent":                       ["warn", 2, {
+      "SwitchCase": 1,
+      "MemberExpression": "off",
+      "FunctionDeclaration": {"body":1, "parameters":"off"},
+      "FunctionExpression": {"body":1, "parameters":"off"},
+      "CallExpression": {"arguments":"off"},
+      "ArrayExpression": 1,
+      "ObjectExpression": 1,
+      "ignoredNodes": ["ConditionalExpression"]
+    }],
+    "linebreak-style":              ["error", "unix"],
+    "no-dupe-keys":                 ["error"],
+    "no-duplicate-case":            ["error"],
+    "no-extra-semi":                ["warn"],
+    "no-labels":                    ["error"],
+    "no-mixed-spaces-and-tabs":     [2, "smart-tabs"],
+    "no-redeclare":                 ["warn"],
+    "no-return-assign":             ["error", "always"],
+    "no-sequences":                 ["error"],
+    "no-trailing-spaces":           ["warn"],
+    "no-undef":                     ["error"],
+    "no-unexpected-multiline":      ["warn"],
+    "no-unreachable":               ["warn"],
+    "no-unused-vars":               ["warn", {"args": "none", "ignoreRestSiblings": true, "caughtErrorsIgnorePattern": "^unused($|[A-Z].*$)"}],
+    "no-use-before-define":         ["error", {"functions":false}],
+    "no-console":                   ["off"],
+    "one-var":                      ["warn", "never"],
+    "prefer-arrow-callback":        ["warn", {"allowNamedFunctions":true}],
+    "quotes":                       ["warn", "single", {"avoidEscape":false, "allowTemplateLiterals":true}],
+    "semi":                         ["error", "always"],
+    "semi-spacing":                 ["warn", {"before":false, "after":true}],
+    "semi-style":                   ["warn", "last"],
+    "lodash/prefer-constant":       ["off"],
+    "lodash/prefer-immutable-method": ["off"]
+  }
+}
